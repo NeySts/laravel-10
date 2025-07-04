@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::prefix('produto')->group(function(){
+    Route::get('/', [ProdutoController::class, 'index'])->name('produto.index');
+    Route::get('/add', [ProdutoController::class, 'add'])->name('produto.add');
+});
+// Route::get('/usuario/{id}', function () {
+//     return 'Test';
+// });

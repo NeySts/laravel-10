@@ -1,5 +1,8 @@
+version: "3.7"
+
 services:
-    sistema_gestao:
+    php:
+        container_name: sistema_gestao
         build:
             context: .
             dockerfile: Dockerfile
@@ -63,4 +66,3 @@ networks:
 # servidor: mysql
 # user: root
 # pass: root
-
