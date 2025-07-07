@@ -6,7 +6,7 @@
          <h1 class="h2">Produtos</h1> 
     </div>
     <div>
-        <form action="" menthod='get'>
+        <form action=" {{ route('produto.index') }}" menthod='get'>
             <input name="pesquisar" aria-placeholder="Digite o nome"/>
             <button>Pesquisar</button>
             <a href="" type="button" class="btn btn-success float-end">
@@ -16,27 +16,31 @@
     </div>
 <h2>Section title</h2>
 <div class="table-responsive small"> 
-    <table class="table table-striped table-sm"> 
-        <thead> <tr> 
-            <th >#</th> 
-            <th >Nome</th>
-            <th >Valor</th> 
-            <th >Ações</th> 
-        </thead>
-        <tbody>
-            @foreach ($findProduto as $produto)
-            <tr>
-                <td>{{ $produto->id }}</td> 
-                <td>{{ $produto->nome }}</td>
-                <td>{{ 'R$'.' '.number_format($produto->valor, 2, ',', '.') }}</td>
-                <td>
-                    <a href="" class="btn btn-light btn-sm"> Editar</a>
-                    <a href="" class="btn btn-danger btn-sm">Excluir</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table> 
+    @if ($findProduto->isEmpty())
+        <p>Produto Não Cadastrado!</p>
+    @else
+        <table class="table table-striped table-sm"> 
+            <thead> <tr> 
+                <th >#</th> 
+                <th >Nome</th>
+                <th >Valor</th> 
+                <th >Ações</th> 
+            </thead>
+            <tbody>
+                @foreach ($findProduto as $produto)
+                <tr>
+                    <td>{{ $produto->id }}</td> 
+                    <td>{{ $produto->nome }}</td>
+                    <td>{{ 'R$'.' '.number_format($produto->valor, 2, ',', '.') }}</td>
+                    <td>
+                        <a href="" class="btn btn-light btn-sm"> Editar</a>
+                        <a href="{{ route('produto.delete') }}" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table> 
+    @endif
 </div> 
 
 @endsection
