@@ -14,5 +14,13 @@ class ProdutoSeeder extends Seeder
             'nome'  => 'Mouse',
             'valor' => '9.00'
         ]);
+         Produto::create([
+            'nome'  => 'Computador',
+            'valor' => '5.000'
+        ]);
+         Produto::create([
+            'nome'  => 'Lápis de cor',
+            'valor' => '7.00'
+        ]);
     }
 }

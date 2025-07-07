@@ -23,6 +23,8 @@ Route::prefix('produto')->group(function(){
     Route::get('/', [ProdutoController::class, 'index'])->name('produto.index');
     Route::get('/add', [ProdutoController::class, 'add'])->name('produto.add');
     Route::delete('/delete', [ProdutoController::class, 'delete'])->name('produto.delete'); 
+    Route::get('/cadastrarProduto', [ProdutoController::class, 'addProduct'])->name('cadastrar.produto');
+    Route::post('/cadastrarProduto', [ProdutoController::class, 'addProduct'])->name('cadastrar.produto');
     
 });
 // Route::get('/usuario/{id}', function () {
