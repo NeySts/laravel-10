@@ -8,18 +8,18 @@
     @csrf
   <div class="mb-3">
     <label class="form-label" >Nome</label>
-    <input type="text" name="nome" class="form-control @error('nome') is-invalid @enderror " placeholder="Digite o nome do produto.">
+    <input type="text" value="{{ old('nome') }}" name="nome" class="form-control @error('nome') is-invalid @enderror " placeholder="Digite o nome do produto.">
     @if($errors->has('nome'))
         <div class="invalid-feedback">{{ $errors->first('nome')}}</div>
     @endif
   </div>
   <div class="mb-3">
     <label  class="form-label">Valor</label>
-    <input type="valor" name="valor" id="mascara_valor" class="form-control @error('valor') is-invalid @enderror" placeholder="Digite o valor do produto.">
+    <input type="valor" value="{{ old('valor') }}" name="valor" id="mascara_valor" class="form-control @error('valor') is-invalid @enderror" placeholder="Digite o valor do produto.">
     @if($errors->has('valor'))
       <div class="invalid-feedback">{{$errors->first('valor')}}</div>
     @endif
   </div>
-  <button type="submit" class="btn btn-primary">Cadastrar</button>
+  <button type="submit" class="btn btn-primary">Gravar</button>
 </form>
 @endsection
