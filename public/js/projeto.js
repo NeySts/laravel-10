@@ -1,5 +1,6 @@
 function deleteRegistroPaginacao(rotaUrl, idDoRegistro){
-
+// alert(rotaUrl);
+// alert(idDoRegistro);
     if(confirm("Deseja mesmo excluir o registro!")){
         $.ajax({
             url: rotaUrl,
@@ -16,6 +17,7 @@ function deleteRegistroPaginacao(rotaUrl, idDoRegistro){
             },
         }).done(function (data){
             $.unblockUI();
+            console.log(data)
             if(data.success == true){
                 window.location.reload();
             }else{

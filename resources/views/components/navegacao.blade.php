@@ -4,7 +4,7 @@ Dashboard
 Vendas
 </a> </li> <li class="nav-item"> <a class="nav-link d-flex align-items-center gap-2" href=" {{ route('produto.index') }} "> <svg class="bi" aria-hidden="true"><use xlink:href="#cart"></use></svg>
 Produtos
-</a> </li> <li class="nav-item"> <a class="nav-link d-flex align-items-center gap-2" href="#"> <svg class="bi" aria-hidden="true"><use xlink:href="#people"></use></svg>
+</a> </li> <li class="nav-item"> <a class="nav-link d-flex align-items-center gap-2" href="{{ route('cliente.index') }}"> <svg class="bi" aria-hidden="true"><use xlink:href="#people"></use></svg>
 Clientes
 {{-- </a> </li> <li class="nav-item"> <a class="nav-link d-flex align-items-center gap-2" href="#"> <svg class="bi" aria-hidden="true"><use xlink:href="#graph-up"></use></svg> --}}
 {{-- Settings --}}
